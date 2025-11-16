@@ -1,0 +1,266 @@
+.currency-input {
+  margin-bottom: 8px;
+}
+
+.currency-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.currency-input-header label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.balance {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.currency-input-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid #e5e8eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.currency-input-body:hover {
+  border-color: #c5cae0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.currency-input-body:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+}
+
+.amount-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  outline: none;
+  min-width: 0;
+}
+
+.amount-input::placeholder {
+  color: #c5cae0;
+}
+
+.amount-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.token-selector {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.token-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f8f9fb;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  transition: all 0.2s ease;
+  min-width: 130px;
+  justify-content: space-between;
+}
+
+.token-button:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.token-button:hover:not(:disabled) .dropdown-arrow {
+  color: white;
+}
+
+.token-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.token-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.token-symbol {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.65rem;
+  color: #999;
+  transition: all 0.2s ease;
+  margin-left: 4px;
+}
+
+.token-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 320px;
+  max-height: 420px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e5e8eb;
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideDown 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.search-container {
+  padding: 16px;
+  border-bottom: 2px solid #f5f6f8;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e8eb;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #f8f9fb;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.token-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.token-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.token-list::-webkit-scrollbar-track {
+  background: #f8f9fb;
+}
+
+.token-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.token-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.token-item {
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f5f6f8;
+}
+
+.token-item:hover {
+  background: #f8f9fb;
+  transform: translateX(4px);
+}
+
+.token-item.selected {
+  background: linear-gradient(90deg, #e8eaf6 0%, #f3f4ff 100%);
+  border-left: 3px solid #667eea;
+  padding-left: 13px;
+}
+
+.token-item:last-child {
+  border-bottom: none;
+}
+
+.token-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.token-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.token-name {
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+}
+
+.token-price {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.no-results {
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .currency-input-body {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .amount-input {
+    font-size: 1.5rem;
+  }
+
+  .token-button {
+    min-width: 110px;
+    padding: 8px 12px;
+  }
+
+  .token-dropdown {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
